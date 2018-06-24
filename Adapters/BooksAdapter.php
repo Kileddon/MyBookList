@@ -21,7 +21,7 @@
     }
 
     public function sortByBookName() {
-      $sql = $this->_link->prepare('SELECT * FROM `' . self::TABLE . '` ORDER BY `name` ');
+      $sql = $this->_link->prepare('SELECT * FROM `' . self::TABLE . '` ORDER BY `id` ');
       $sql->execute();
       $result = $sql->get_result();
 

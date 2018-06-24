@@ -1,7 +1,3 @@
-<?php
-include_once 'connect.php';
-include_once 'Adapters/BooksAdapter.php';
-?>
 <form method="post">
 <label>Author:</label>
 <input type="text" name="author">
