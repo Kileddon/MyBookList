@@ -1,3 +1,4 @@
+  <br>
   <label>Your review:</label>
   <input type="text" id="comment">
   <label>Rate book:</label>
@@ -16,21 +17,20 @@
   <br>
 <button id='reviewButton' type="submit" name="create">Submit a Review</button>
 <script>
-$(document).ready(function(){
-  $('#reviewButton').click(function(){
+$(document).ready(function() {
+  $('#reviewButton').click(function() {
   let comment = '&comment='+$('#comment').val();
   let rate = 'rate=' + $('#rate').find('option:selected').val();
   let bookId = '&bookId=<?php echo $bookId; ?>';
   let query = rate+comment+bookId;
-  $.ajax({
+  $.ajax ({
     type: "GET",
     url: "ajax.php",
     data: query,
     success: function(result){
       $("#show").append('<br>'+result);
     }
-    }
-  );
+    });
 })
 });
 </script>

@@ -12,7 +12,7 @@
   </head>
   <body>
     <?php
-      $sql = $booksAdapter->sortByBookName();
+      $sql = $booksAdapter->sortById();
     ?>
     <form method="post">
       <select size="10" id='selectBook' name="selectBook">
@@ -31,7 +31,6 @@
     $(document).ready(function(){
       $('#selectBook').change(function(){
   	  let bookId = 'id=' + $(this).find('option:selected').val();
-      console.log(bookId);
       $.ajax({
         type: "GET",
         url: "ajax.php",

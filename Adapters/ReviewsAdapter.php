@@ -20,5 +20,10 @@ class ReviewsAdapter extends Adapter {
 
     return $sql;
   }
+  public function deleteReviews($deleteId) {
+    $sql = $this->_link->prepare('DELETE FROM `' . self::TABLE . '` where book_id=?');
+    $sql->bind_param('i', $deleteId);
+    $sql->execute();
+  }
 }
 ?>
